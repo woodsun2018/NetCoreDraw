@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  myweb:
+    container_name: myweb
+    image: mywebimage
+    build:
+      context: ./PublishOutput
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - TZ=Asia/Shanghai
+    restart: always
+
